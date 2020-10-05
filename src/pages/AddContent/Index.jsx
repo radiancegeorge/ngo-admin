@@ -25,7 +25,7 @@ const Index = ()=>{
         fontSize: 40,
         fontWeight: 600, 
         marginBottom: '-150px'
-    }}>{Math.floor(uploadProgress * 100 - 1)}%</div><progress value = {uploadProgress} style={{
+        }}>{Math.floor(uploadProgress * 100 <= 100 ? uploadProgress * 100 : 100)}%</div><progress value = {uploadProgress} style={{
             marginTop: '-150px'
     }}></progress></div> : undefined
     if(user){
