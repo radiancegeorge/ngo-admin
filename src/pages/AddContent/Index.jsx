@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-const serverUrl = 'http://localhost:4000/upload'
+import { Link } from 'react-router-dom';
 
+const serverUrl = 'http://localhost:4000/upload';
 
 const Index = ()=>{
     const user = sessionStorage.getItem('user');
@@ -13,10 +14,20 @@ const Index = ()=>{
         width: '100%',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-around',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
         zIndex: 100,
         background: 'rgba(0,0,0,0.7)'
-    }}><progress value = {uploadProgress}></progress></div> : undefined
+    }}><div style={{
+        flexBasis: '100%',
+        textAlign:'center',
+        color: 'white',
+        fontSize: 40,
+        fontWeight: 600, 
+        marginBottom: '-150px'
+    }}>{Math.floor(uploadProgress * 100 - 1)}%</div><progress value = {uploadProgress} style={{
+            marginTop: '-150px'
+    }}></progress></div> : undefined
     if(user){
         const handleFormData = async (e)=>{
             const promise = await new Promise((resolve, reject)=>{
@@ -88,6 +99,9 @@ const Index = ()=>{
                             }
                         })
                     }}>
+                        <div className="remove">
+                            <Link to = '/delete'> Delete Posts</Link>
+                        </div>
                         <label htmlFor="heading">
                             <p>Heading</p>
                             <input type="text" placeholder = 'Choose a Heading' name= 'heading'/>
