@@ -94,7 +94,7 @@ const Index = ()=>{
                         </label>
                         <label htmlFor="writeup">
                             <p>Body Content</p>
-                            <textarea name="content" id="" cols="30" rows="10"></textarea>
+                            <textarea  spellCheck = 'true' name="content" id="" cols="30" rows="10"></textarea>
                         </label>
                         <label htmlFor="video">
                             <input type="file" className = 'file' accept='video/mp4' name='video' />

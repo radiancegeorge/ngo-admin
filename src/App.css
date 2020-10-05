@@ -2,9 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline:none;
 }
 .container{
-  max-width: 400px;
+  max-width: 450px;
   margin: auto;
 }
 .homepage form{
@@ -25,12 +26,22 @@
   width: 70%;
   cursor: pointer;
 }
+.add{
+  background: rgba(0,0,0,0.1);
+}
+.add form p{
+  color: green;
+  padding: 0.5rem 0;
+  font-weight: 600;
+}
 .add form{
   display: flex;
   flex-flow: column;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
+  background: white;
+  padding: 0 1rem;
 }
 .add form label{
   margin-top: 1rem;
@@ -42,15 +53,39 @@
 }
 .add form textarea{
   width: 100%;
-}
-.file::-webkit-file-upload-button{
   padding: 1rem;
 }
+.file{
+  position: relative;
+}
+.file::-webkit-file-upload-button{
+  /* padding: 1rem; */
+  visibility: hidden;
+}
+.add .file::before{
+    content: 'MP4';
+    position: absolute;
+    left: 2.6rem;
+    top: 0.3rem;
+    background: #000;
+    padding: 1rem;
+    color: white;
+    display: block;
+}
 .add button{
+  transition: 0.3s;
   padding: 1rem;
   margin-top: 1rem;
   width: 70%;
   position: relative;
+  cursor: pointer;
+  background: rgb(0, 128, 0);
+  color: white;
+  border: none;
+  font-size: 18px;
+}
+.add button:hover{
+  background: rgb(22, 226, 22);
 }
 .lds-ring {
   display: inline-block;
